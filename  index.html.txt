@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atriceb Design | Luxury Curtains & Premium Beddings</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C5A059;
+    --gold-light: #D4B978;
+    --dark: #1A1A1A;
+    --charcoal: #2C2C2C;
+    --cream: #F9F7F2;
+    --cream-dark: #F0EDE6;
+    --white: #FFFFFF;
+    --text-body: #4A4A4A;
+    --text-light: #8A8A8A;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-body);
+    background: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: var(--dark);
+    line-height: 1.2;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  header.scrolled {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo span {
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+  }
+
+  .nav-links a:hover {
+    color: var(--gold);
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .mobile-menu-btn span {
+    width: 24px;
+    height: 2px;
+    background: var(--dark);
+    transition: all 0.3s;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(197,160,89,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 24px;
+    font-weight: 700;
+  }
+
+  .hero-content h1 em {
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-body);
+    margin-bottom: 16px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-subtitle::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    max-width: 480px;
+    line-height: 1.8;
+  }
+
+  .hero-features {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .hero-feature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--charcoal);
+  }
+
+  .hero-feature svg {
+    width: 20px;
+    height: 20px;
+    color: var(--gold);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--white);
+    box-shadow: 0 4px 20px rgba(197, 160, 89, 0.3);
+  }
+
+  .btn-primary:hover {
+    background: var(--dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--dark);
+    border: 1px solid var(--dark);
+  }
+
+  .btn-outline:hover {
+    background: var(--dark);
+    color: var(--white);
+    transform: translateY(-2px);
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-visual {
+    position: relative;
+    height: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-image-frame {
+    width: 100%;
+    height: 100%;
+    border-radius: 200px 200px 20px 20px;
+    background: linear-gradient(135deg, #E8E0D5 0%, #D5C9B8 100%);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  }
+
+  .hero-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 40px;
+    left: -20px;
+    background: var(--white);
+    padding: 20px 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    animation: float 6s ease-in-out infinite;
+    z-index: 3;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .hero-badge-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .hero-badge-text h4 {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+
+  .hero-badge-text p {
+    font-size: 0.75rem;
+    color: var(--text-light);
+  }
+
+  /* Section styling */
+  section {
+    padding: 100px 0;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 60px;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+
+  .section-header p {
+    color: var(--text-light);
+    font-size: 1.05rem;
+  }
+
+  /* Products */
+  .products {
+    background: var(--white);
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .product-card {
+    background: var(--cream);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: relative;
+    border: 1px solid rgba(197,160,89,0.1);
+  }
+
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+    border-color: rgba(197,160,89,0.3);
+  }
+
+  .product-image {
+    height: 320px;
+    position: relative;
+    overflow: hidden;
+    background: #E8E0D5;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .product-card:hover .product-image img {
+    transform: scale(1.05);
+  }
+
+  .product-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.15));
+    pointer-events: none;
+  }
+
+  .product-content {
+    padding: 28px;
+  }
+
+  .product-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .product-content p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+
+  .product-tag {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--gold);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Services */
+  .services {
+    background: var(--cream);
+    position: relative;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .service-card {
+    text-align: center;
+    padding: 40px 30px;
+    background: var(--white);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+  }
+
+  .service-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  }
+
+  .service-number {
+    width: 60px;
+    height: 60px;
+    background: var(--gold);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 24px;
+  }
+
+  .service-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+
+  .service-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .nationwide-banner {
+    margin-top: 60px;
+    background: var(--dark);
+    border-radius: 16px;
+    padding: 40px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    color: var(--white);
+  }
+
+  .nationwide-banner h3 {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
+  .nationwide-banner p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+  }
+
+  /* Why Choose Us */
+  .why-us {
+    background: var(--white);
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .why-visual {
+    height: 540px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  }
+
+  .why-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .why-visual-badge {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: var(--white);
+    padding: 20px 28px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .why-visual-badge h4 {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .why-visual-badge p {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .why-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+
+  .why-content > p {
+    color: var(--text-light);
+    margin-bottom: 36px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .why-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .why-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .why-item-icon {
+    min-width: 48px;
+    height: 48px;
+    background: var(--cream);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: var(--gold);
+    border: 1px solid rgba(197,160,89,0.2);
+  }
+
+  .why-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  .why-item p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  /* CTA */
+  .cta {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--charcoal) 100%);
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(197,160,89,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta h2 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta > p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta .btn-primary {
+    background: var(--gold);
+    color: var(--dark);
+  }
+
+  .cta .btn-outline {
+    color: var(--white);
+    border-color: var(--white);
+  }
+
+  .cta .btn-outline:hover {
+    background: var(--white);
+    color: var(--dark);
+  }
+
+  /* Contact */
+  .contact {
+    background: var(--cream);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .contact-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .contact-info > p {
+    color: var(--text-light);
+    margin-bottom: 32px;
+    line-height: 1.8;
+  }
+
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-method {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: var(--white);
+    border-radius: 12px;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+  }
+
+  .contact-method:hover {
+    border-color: var(--gold);
+    transform: translateX(4px);
+  }
+
+  .contact-method-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--cream);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--gold);
+    border: 1px solid rgba(197,160,89,0.2);
+    flex-shrink: 0;
+  }
+
+  .contact-method h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+
+  .contact-method p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+
+  .contact-method a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .contact-method a:hover {
+    color: var(--gold);
+  }
+
+  .contact-form {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    border: 1px solid rgba(197,160,89,0.1);
+  }
+
+  .contact-form h3 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--dark);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #E5E5E5;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-body);
+    transition: all 0.3s;
+    background: var(--cream);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(197,160,89,0.1);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--dark);
+    color: var(--text-light);
+    padding: 60px 0 30px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+
+  .footer-tagline {
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: 24px;
+    font-size: 1rem;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 32px;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover {
+    color: var(--gold);
+  }
+
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .social-icon:hover {
+    background: var(--gold);
+    color: var(--dark);
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+
+  .footer-copy {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    opacity: 0.6;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 24px;
+  }
+
+  /* Animations */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Responsive */
+  @media (max-width: 992px) {
+    .hero-grid,
+    .why-grid,
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-visual {
+      order: -1;
+      height: 400px;
+    }
+
+    .products-grid,
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .nationwide-banner {
+      flex-direction: column;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+
+    .why-visual {
+      height: 400px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+
+    .mobile-menu-btn {
+      display: flex;
+    }
+
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+    }
+
+    .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-badge {
+      left: 20px;
+      bottom: 20px;
+      padding: 16px 20px;
+    }
+
+    .cta h2 {
+      font-size: 1.8rem;
+    }
+
+    .product-image {
+      height: 260px;
+    }
+
+    .why-visual {
+      height: 320px;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="container">
+    <nav>
+      <a href="#" class="logo">
+        Atriceb <span>Design</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <p class="hero-subtitle">Luxury Home Interiors</p>
+        <h1>Live Beautifully <br><em>with Atriceb Design</em></h1>
+        <p class="hero-tagline">Bring 5-star hotel comfort to your home. We craft luxurious curtains, premium beddings, and elegant window blinds tailored to your space.</p>
+        
+        <div class="hero-features">
+          <div class="hero-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Thick Premium Fabric
+          </div>
+          <div class="hero-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Elegant Window Blinds
+          </div>
+          <div class="hero-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            Nationwide Delivery
+          </div>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+          <a href="#products" class="btn btn-outline">View Our Products</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-image-frame">
+          <img src="curtains.jpg" alt="Luxury pleated beige curtains by Atriceb Design">
+        </div>
+        <div class="hero-badge">
+          <div class="hero-badge-icon">🚚</div>
+          <div class="hero-badge-text">
+            <h4>We Deliver</h4>
+            <p>Across all 36 states</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">Our Collection</div>
+      <h2>Luxury Curtains + Premium Beddings</h2>
+      <p>Transform your home with our exquisite range of handcrafted interiors, made from the finest materials and designed for lasting elegance.</p>
+    </div>
+
+    <div class="products-grid">
+      <div class="product-card fade-in">
+        <div class="product-image">
+          <img src="curtains.jpg" alt="Luxury thick fabric curtains">
+        </div>
+        <div class="product-content">
+          <span class="product-tag">Bestseller</span>
+          <h3>Luxury Curtains</h3>
+          <p>Thick, opulent fabrics that frame your windows with sophistication. Available in a variety of textures, colors, and lengths to match your interior style.</p>
+        </div>
+      </div>
+
+      <div class="product-card fade-in">
+        <div class="product-image">
+          <img src="blinds.jpg" alt="Elegant striped window blinds">
+        </div>
+        <div class="product-content">
+          <span class="product-tag">Modern</span>
+          <h3>Window Blinds</h3>
+          <p>Sleek, elegant blinds offering precise light control and privacy. From Venetian to roller styles, we tailor each piece to your exact window dimensions.</p>
+        </div>
+      </div>
+
+      <div class="product-card fade-in">
+        <div class="product-image">
+          <img src="bedding.jpg" alt="Premium geometric bedding set">
+        </div>
+        <div class="product-content">
+          <span class="product-tag">Premium</span>
+          <h3>Premium Beddings</h3>
+          <p>Hotel-quality sheets, duvets, and pillowcases woven from high-thread-count cotton and silk blends. Sleep in five-star comfort every night.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">How It Works</div>
+      <h2>We Measure. We Install. We Deliver.</h2>
+      <p>Enjoy a seamless, white-glove experience from the first consultation to the final installation.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <div class="service-number">1</div>
+        <h3>We Measure</h3>
+        <p>Our experts visit your home to take precise measurements of every window and space, ensuring a perfect, tailored fit for your curtains and blinds.</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-number">2</div>
+        <h3>We Install</h3>
+        <p>Professional installation by our skilled team. We handle the mounting, hanging, and finishing touches so everything looks flawless.</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-number">3</div>
+        <h3>We Deliver</h3>
+        <p>From Lagos to Kano, Port Harcourt to Abuja — we deliver your luxury home furnishings safely and swiftly, anywhere in Nigeria.</p>
+      </div>
+    </div>
+
+    <div class="nationwide-banner fade-in">
+      <div>
+        <h3>Nationwide Coverage</h3>
+        <p>Wherever you are in Nigeria, Atriceb Design brings luxury to your doorstep.</p>
+      </div>
+      <a href="#contact" class="btn btn-primary">Start Your Order</a>
+    </div>
+  </div>
+</section>
+
+<section class="why-us" id="why-us">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-visual fade-in">
+        <img src="bedding.jpg" alt="Beautiful premium bedding showcase">
+        <div class="why-visual-badge">
+          <h4>5-Star</h4>
+          <p>Hotel Comfort</p>
+        </div>
+      </div>
+
+      <div class="why-content fade-in">
+        <div class="section-label">Why Choose Us</div>
+        <h2>Perfect Fit. Elegant Designs. Unmatched Quality.</h2>
+        <p>At Atriceb Design, we believe your home deserves the same attention to detail as the world's finest hotels. We combine artisan craftsmanship with modern design.</p>
+
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-item-icon">✓</div>
+            <div>
+              <h4>Premium Thick Fabrics</h4>
+              <p>We source only high-density, durable textiles that drape beautifully and last for years without fading or wear.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-icon">✓</div>
+            <div>
+              <h4>Tailored to Your Space</h4>
+              <p>Every piece is custom-measured and cut to fit your exact windows and bed dimensions — no one-size-fits-all.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-icon">✓</div>
+            <div>
+              <h4>End-to-End Service</h4>
+              <p>From consultation and measurement to delivery and installation, we manage the entire process so you don't have to lift a finger.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-icon">✓</div>
+            <div>
+              <h4>Affordable Luxury</h4>
+              <p>Five-star quality doesn't have to break the bank. We offer competitive pricing with flexible payment options.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2 class="fade-in">Ready to Live Beautifully?</h2>
+    <p class="fade-in">Let Atriceb Design transform your house into a sanctuary of comfort and style. Book your free consultation today.</p>
+    <div class="cta-buttons fade-in">
+      <a href="#contact" class="btn btn-primary">Book Free Consultation</a>
+      <a href="tel:+2348142100005" class="btn btn-outline">Call Us Now</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <div class="section-label">Get in Touch</div>
+        <h3>Start Your Home Transformation</h3>
+        <p>Send us a message or reach out directly. Our design consultants are ready to help you choose the perfect curtains, beddings, and blinds for your space.</p>
+
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="contact-method-icon">📞</div>
+            <div>
+              <h4>Phone / WhatsApp</h4>
+              <p><a href="tel:+2348142100005">0814 210 0005</a></p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-method-icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:atricebdesign@gmail.com">atricebdesign@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-method-icon">📍</div>
+            <div>
+              <h4>Showroom</h4>
+              <p>Your City, Nigeria</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form fade-in">
+        <h3>Request a Free Quote</h3>
+        <form onsubmit="event.preventDefault(); showFormSuccess();">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="+234..." required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="service">Interested In</label>
+            <select id="service" required>
+              <option value="">Select a service...</option>
+              <option value="curtains">Luxury Curtains</option>
+              <option value="beddings">Premium Beddings</option>
+              <option value="blinds">Window Blinds</option>
+              <option value="full-home">Full Home Package</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="location">Your Location (State)</label>
+            <input type="text" id="location" placeholder="e.g. Lagos, Abuja, Kano..." required>
+          </div>
+          <div class="form-group">
+            <label for="message">Additional Details</label>
+            <textarea id="message" placeholder="Tell us about your space, dimensions, or preferred styles..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Send Request</button>
+          <p id="form-success" style="margin-top: 16px; color: var(--gold); font-weight: 600; display: none; text-align: center;">Thank you! We will contact you shortly.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-logo">Atriceb Design</div>
+    <div class="footer-tagline">Live Beautifully</div>
+    <ul class="footer-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="footer-social">
+      <a href="#" class="social-icon" aria-label="Instagram">IG</a>
+      <a href="#" class="social-icon" aria-label="Facebook">FB</a>
+      <a href="https://wa.me/2348142100005" class="social-icon" aria-label="WhatsApp">WA</a>
+      <a href="#" class="social-icon" aria-label="Twitter">X</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Atriceb Design. All rights reserved. Luxury curtains, beddings & blinds — Nationwide Nigeria.
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  function toggleMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks.style.display === 'flex') {
+      navLinks.style.display = '';
+      navLinks.style.position = '';
+      navLinks.style.top = '';
+      navLinks.style.left = '';
+      navLinks.style.right = '';
+      navLinks.style.background = '';
+      navLinks.style.flexDirection = '';
+      navLinks.style.padding = '';
+      navLinks.style.boxShadow = '';
+      navLinks.style.gap = '';
+      navLinks.style.zIndex = '';
+    } else {
+      navLinks.style.display = 'flex';
+      navLinks.style.position = 'absolute';
+      navLinks.style.top = '80px';
+      navLinks.style.left = '0';
+      navLinks.style.right = '0';
+      navLinks.style.background = 'white';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.padding = '24px';
+      navLinks.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+      navLinks.style.gap = '16px';
+      navLinks.style.zIndex = '999';
+    }
+  }
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.style.display = '';
+      }
+    });
+  });
+
+  function showFormSuccess() {
+    const msg = document.getElementById('form-success');
+    msg.style.display = 'block';
+    setTimeout(() => {
+      msg.style.display = 'none';
+    }, 4000);
+  }
+</script>
+
+</body>
+</html>
